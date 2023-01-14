@@ -47,7 +47,7 @@ class BinarySearchTreeNode:
             elements += self.right.in_order_traversal()
         return elements
 
-    def in_order_traversal(self):
+    def post_order_traversal(self):
         elements = []
 
         if self.left:
@@ -88,3 +88,4 @@ if __name__ == "__main__":
     my_name_tree = build_tree(my_name)
     print("Your name in order Traversal list is: ", my_name_tree.in_order_traversal())
     print("Your name in  pre-order Traversal list is: ", my_name_tree.pre_order_traversal())
+    print("Your name in  post-order Traversal list is: ", my_name_tree.post_order_traversal())
