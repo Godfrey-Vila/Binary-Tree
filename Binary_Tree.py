@@ -87,6 +87,10 @@ class BinarySearchTreeNode:
             if self.right is None:
                 return self.right
 
+            min_val = self.right.find_min()
+            self.data = min_val
+            self.right = self.right.delete(min_val)
+
     def search(self, val):
         if self.data == val:
             return True
