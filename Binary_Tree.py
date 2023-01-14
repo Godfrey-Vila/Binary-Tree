@@ -39,6 +39,7 @@ class BinarySearchTreeNode:
 
     def pre_order_traversal(self):
         elements = []
+        elements.append(self.data)
 
         if self.left:
             elements += self.left.in_order_traversal()
@@ -60,6 +61,8 @@ class BinarySearchTreeNode:
 
         elements.append(self.data)
         return elements
+
+    def find_max(self):
 
     def search(self, val):
         if self.data == val:
