@@ -73,6 +73,8 @@ class BinarySearchTreeNode:
         return self.left.find_max()
 
     def delete(self, val):
+        if val < self.data:
+            if self.left.delete(val)
 
 
     def search(self, val):
