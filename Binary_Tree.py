@@ -28,3 +28,8 @@ class BinarySearchTreeNode:
     def in_order_traversal(self):
         elements = []
 
+        if self.left:
+            elements += self.left.in_order_traversal()
+
+        elements.append(self.data)
+
