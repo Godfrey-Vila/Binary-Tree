@@ -75,10 +75,10 @@ class BinarySearchTreeNode:
     def delete(self, val):
         if val < self.data:
             if self.left:
-                self.left.delete(val)
+                self.left = self.left.delete(val)
         elif val > self.data:
             if self.right:
-                self.right.delete(val)
+                self.right = self.right.delete(val)
         else:
             if self.left is None and self.right is None:
                 return None
@@ -91,20 +91,6 @@ class BinarySearchTreeNode:
             self.data = min_val
             self.right = self.right.delete(min_val)
 
-    def search(self, val):
-        if self.data == val:
-            return True
-
-        if val < self.data:
-            if self.left:
-                return self.left.search(val)
-            else:
-                return False
-        if val > self.data:
-            if self.right:
-                return self.right.search(val)
-            else:
-                return False
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
 
@@ -116,6 +102,14 @@ def build_tree(elements):
 if __name__ == "__main__":
     my_name = ["G", "O", "D", "F", "R", "E", "Y", "C", "V", "I", "L", "A"]
     my_name_tree = build_tree(my_name)
+    print("Your name in order Traversal list is: ", my_name_tree.in_order_traversal())
+    print("Your name in  pre-order Traversal list is: ", my_name_tree.pre_order_traversal())
+    print("Your name in  post-order Traversal list is: ", my_name_tree.post_order_traversal())
+
+    print("")
+    Input = input(str("What letter from GODFREY C VILA you want to delete in any tranversal order?: ")).upper()
+    print("")
+    my_name_tree.delete(Input)
     print("Your name in order Traversal list is: ", my_name_tree.in_order_traversal())
     print("Your name in  pre-order Traversal list is: ", my_name_tree.pre_order_traversal())
     print("Your name in  post-order Traversal list is: ", my_name_tree.post_order_traversal())
