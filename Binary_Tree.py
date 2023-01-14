@@ -43,12 +43,12 @@ class BinarySearchTreeNode:
 
         if val < self.data:
             if self.left:
-                self.left.search(val)
+                return self.left.search(val)
             else:
                 return False
         if val > self.data:
             if self.right:
-                self.right.search(val)
+                return self.right.search(val)
             else:
                 return False
 def build_tree(elements):
@@ -59,4 +59,7 @@ def build_tree(elements):
 
     return root
 
-
+if __name__ == "__main__":
+    my_name = ["G", "O", "D", "F", "R", "E", "Y", "C", "V", "I", "L", "A"]
+    my_name_tree = build_tree(my_name)
+    print("Your name in order Traversal list is: ", my_name_tree.in_order_traversal())
